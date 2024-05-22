@@ -9,5 +9,5 @@ title: Chechen Transliterator
 <p class="mt-3">Output: <span id="transliteration-output" class="font-weight-bold"></span></p>
 
 {% block extra_scripts %}
-<script src="/assets/repositories/chechen-transliterator/main.js"></script>
+<script type="module" src="/assets/repositories/chechen-transliterator/main.js"></script>
 {% endblock %}
