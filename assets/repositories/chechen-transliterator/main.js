@@ -1,11 +1,11 @@
 // prettier-ignore
 const transliteration = {
-    'а': 'a', 'аь': 'ä', 'б': 'b', 'в': 'v', 'г': 'g', 'гӏ': 'ġ', 'ц': 'c', 'цӏ': 'ċ', 'д': 'd',
-    'е': 'e', 'ё': 'ö', 'ж': 'ƶ', 'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'кх': 'q', 'къ': 'q̇',
-    'кӏ': 'k̇', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'оь': 'ö', 'п': 'p', 'пӏ': 'ṗ', 'р': 'r',
-    'с': 's', 'т': 't', 'тӏ': 'ṫ', 'у': 'u', 'уь': 'ü', 'ф': 'f', 'х': 'x', 'хь': 'ẋ', 'хӏ': 'h',
-    'ч': 'ç', 'чӏ': 'ç̇', 'ш': 'ş', 'щ': 'ş', 'ъ': 'ə', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya',
-    'ӏ': 'j', 'Ӏ': 'J', 'ккх': 'qq', 'ккъ': 'q̇q̇', 'юь': 'yü', 'яь': 'yä'
+  'а': 'a', 'аь': 'ä', 'б': 'b', 'в': 'v', 'г': 'g', 'гӏ': 'ġ', 'ц': 'c', 'цӏ': 'ċ', 'д': 'd',
+  'е': 'e', 'ё': 'ö', 'ж': 'ƶ', 'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'кх': 'q', 'къ': 'q̇',
+  'кӏ': 'k̇', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'оь': 'ö', 'п': 'p', 'пӏ': 'ṗ', 'р': 'r',
+  'с': 's', 'т': 't', 'тӏ': 'ṫ', 'у': 'u', 'уь': 'ü', 'ф': 'f', 'х': 'x', 'хь': 'ẋ', 'хӏ': 'h',
+  'ч': 'ç', 'чӏ': 'ç̇', 'ш': 'ş', 'щ': 'ş', 'ъ': 'ə', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya',
+  'ӏ': 'j', 'Ӏ': 'J', 'ккх': 'qq', 'ккъ': 'q̇q̇', 'юь': 'yü', 'яь': 'yä'
 };
 
 function applyTransliteration(word) {
@@ -69,22 +69,31 @@ function getQueryParameter(name) {
   return urlParams.get(name);
 }
 
+function updateQueryParameter(name, value) {
+  const url = new URL(window.location.href);
+  url.searchParams.set(name, value);
+  window.history.replaceState(null, null, url);
+}
+
 function handleTransliteration() {
   const input = document.getElementById('transliteration-input').value;
   const output = applyTransliteration(input);
   document.getElementById('transliteration-output').textContent = output;
+  updateQueryParameter('text', input);
 }
 
-document
-  .getElementById('transliterate-button')
-  .addEventListener('click', handleTransliteration);
+document.getElementById('transliterate-button').addEventListener('click', handleTransliteration);
+
+// Update query parameter on input change
+document.getElementById('transliteration-input').addEventListener('input', (event) => {
+  updateQueryParameter('text', event.target.value);
+});
 
 // On page load, check for the query parameter and set the input value if present
 document.addEventListener('DOMContentLoaded', () => {
   const inputText = getQueryParameter('text');
-  console.log('Query Parameter:', inputText); // Debug log
   if (inputText) {
-    document.getElementById('transliteration-input').value = inputText;
+    document.getElementById('transliteration-input').value = decodeURIComponent(inputText);
     const output = applyTransliteration(inputText);
     document.getElementById('transliteration-output').textContent = output;
   }
