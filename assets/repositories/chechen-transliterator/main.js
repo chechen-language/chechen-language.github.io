@@ -64,6 +64,11 @@ function applyTransliteration(word) {
   return result;
 }
 
+function getQueryParameter(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
 function handleTransliteration() {
   const input = document.getElementById('transliteration-input').value;
   const output = applyTransliteration(input);
@@ -73,3 +78,14 @@ function handleTransliteration() {
 document
   .getElementById('transliterate-button')
   .addEventListener('click', handleTransliteration);
+
+// On page load, check for the query parameter and set the input value if present
+document.addEventListener('DOMContentLoaded', () => {
+  const inputText = getQueryParameter('text');
+  console.log('Query Parameter:', inputText); // Debug log
+  if (inputText) {
+    document.getElementById('transliteration-input').value = inputText;
+    const output = applyTransliteration(inputText);
+    document.getElementById('transliteration-output').textContent = output;
+  }
+});
