@@ -8,7 +8,8 @@ const transliteration = {
   'ӏ': 'j', 'Ӏ': 'J', 'ккх': 'qq', 'ккъ': 'q̇q̇', 'юь': 'yü', 'яь': 'yä'
 };
 
-function applyTransliteration(word) {
+function applyTransliteration(w) {
+  const word = w.toLowerCase();
   let result = '';
   let i = 0;
   while (i < word.length) {
@@ -77,7 +78,9 @@ function updateQueryParameter(name, value) {
 
 function handleTransliteration() {
   const input = document.getElementById('transliteration-input').value;
-  const output = applyTransliteration(input);
+  const words = input.split(' '); // Split input into words
+  const transliteratedWords = words.map(word => applyTransliteration(word)); // Transliterate each word
+  const output = transliteratedWords.join(' '); // Join transliterated words into a single string
   document.getElementById('transliteration-output').textContent = output;
   updateQueryParameter('text', input);
 }
@@ -94,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputText = getQueryParameter('text');
   if (inputText) {
     document.getElementById('transliteration-input').value = decodeURIComponent(inputText);
-    const output = applyTransliteration(inputText);
-    document.getElementById('transliteration-output').textContent = output;
+    handleTransliteration(); // Transliterate the pre-filled input
   }
 });
