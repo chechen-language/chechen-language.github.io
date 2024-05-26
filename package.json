@@ -29,6 +29,6 @@
     "prettier": "^3.2.5"
   },
   "dependencies": {
-    "@ce/transliteration": "npm:@jsr/ce__transliteration@^0.2.5"
+    "@ce/transliteration": "npm:@jsr/ce__transliteration@^0.2.6"
   }
 }
