@@ -13,9 +13,7 @@ function updateQueryParameter(name, value) {
 
 function handleTransliteration() {
   const input = document.getElementById('transliteration-input').value;
-  const words = input.split(' '); // Split input into words
-  const transliteratedWords = words.map(word => mod.apply(word)); // Transliterate each word
-  const output = transliteratedWords.join(' '); // Join transliterated words into a single string
+  const output = mod.apply(input);
   document.getElementById('transliteration-output').textContent = output;
   updateQueryParameter('text', input);
 }
