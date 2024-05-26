@@ -4,7 +4,12 @@ title: Chechen Transliterator
 ---
 
 <h1>Chechen Transliterator</h1>
-<textarea id="transliteration-input" placeholder="Enter text to transliterate" class="form-control my-3"></textarea>
+<textarea
+  id="transliteration-input"
+  placeholder="Enter text to transliterate"
+  class="form-control my-3"
+  rows="5"
+></textarea>
 <button id="transliterate-button" class="btn btn-primary">Transliterate</button>
 <p class="mt-3">Output: <span id="transliteration-output" class="font-weight-bold"></span></p>
 
