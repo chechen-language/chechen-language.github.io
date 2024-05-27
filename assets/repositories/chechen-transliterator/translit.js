@@ -4,6 +4,11 @@
  * 
  * Demo: https://chechen-language.github.io/repositories/chechen-transliterator/?text=дӏахьаьдира
  * 
+ * Special Handling:
+ * - The character 'н' at the end of a word is generally transliterated as 'ŋ'.
+ * - If the word is in the `blacklist`, 'н' is transliterated as 'n'.
+ * - If the word is in the `unsureList`, 'н' is transliterated as 'ŋ[REPLACE]' to indicate manual review is needed.
+ * 
  * @module translit
  * 
  * @example
@@ -199,6 +204,21 @@
   "ЯЬ": "Yä"
 };
 /**
+ * A list of words where 'н' at the end should not be replaced with 'ŋ'.
+ * @constant {Set<string>}
+ */ export const blacklist = new Set([
+  "хан",
+  "дин",
+  "гӏан"
+]);
+/**
+ * A list of words that require manual review for the 'н' transliteration.
+ * @constant {Set<string>}
+ */ export const unsureList = new Set([
+  "шун",
+  "бен"
+]);
+/**
  * Applies transliteration to a given word using the predefined transliteration mapping.
  * 
  * @param {string} word - The word to be transliterated.
@@ -220,32 +240,36 @@
       word.substring(i, i + 1)
     ]){
       if (translitMap.hasOwnProperty(key)) {
-        const preLetter = i > 0 ? word[i - 1].toLowerCase() : '';
+        const preLetter = i > 0 ? word[i - 1] : '';
         const nextLetter = i + 1 < word.length ? word[i + 1] : '';
+        const hasNextLetter = i + 1 < word.length;
+        const hasPreLetter = i > 0;
         // if key is 'ъ' and next character is 'е', 'ё', 'ю', or 'я'
-        if ((key === 'ъ' || key === 'Ъ') && 'еёюяЕЁЮЯ'.includes(nextLetter)) {
+        if ((key === 'ъ' || key === 'Ъ') && 'еёюя'.includes(nextLetter.toLowerCase())) {
           // if 'к' is before 'ъ', transliterate 'ъ' as 'q̇'
-          if (i > 0 && preLetter === 'к') {
-            match = word[i - 1] === 'к' ? 'q̇' : 'Q̇';
+          if (i > 0 && preLetter.toLowerCase() === 'к') {
+            match = preLetter === 'к' ? 'q̇' : 'Q̇';
           } else {
             match = ''; // else skip 'ъ'
           }
-        } else if (key === 'е' || key === 'Е') {
+        } else if (key.toLowerCase() === 'е') {
+          const ye = key === 'е' ? 'ye' : hasNextLetter && nextLetter.toUpperCase() === nextLetter || !hasNextLetter && hasPreLetter && preLetter.toUpperCase() === preLetter ? 'YE' : 'Ye';
           if (i === 0) {
-            match = key === 'е' ? 'ye' : nextLetter && nextLetter.toUpperCase() === nextLetter ? 'YE' : 'Ye'; // 'е' at the start of the word
-          } else if (i > 0) {
-            const preConsonant = i > 1 ? word.substring(i - 2, i).toLowerCase() : '';
-            if (preLetter === 'ъ' && (i < 2 || preConsonant !== 'къ')) {
-              // 'е' following 'ъ' that does not follow 'къ'
-              match = key === 'е' ? 'ye' : nextLetter && nextLetter.toUpperCase() === nextLetter ? 'YE' : 'Ye';
-            } else {
-              match = translitMap[key]; // Regular transliteration for 'е'
-            }
+            match = ye;
+          } else if (hasPreLetter && preLetter.toLowerCase() === 'ъ' && (i < 2 || word.substring(i - 2, i).toLowerCase() !== 'къ')) {
+            match = ye;
           } else {
             match = translitMap[key];
           }
         } else if ((key === 'н' || key === 'Н') && i === word.length - 1) {
-          match = key === 'н' ? 'ŋ' : 'Ŋ'; // 'н' at the end of the word
+          const lowerWord = word.toLowerCase();
+          if (blacklist.has(lowerWord)) {
+            match = key === 'н' ? 'n' : 'N';
+          } else if (unsureList.has(lowerWord)) {
+            match = key === 'н' ? 'ŋ[REPLACE]' : 'Ŋ[REPLACE]';
+          } else {
+            match = key === 'н' ? 'ŋ' : 'Ŋ'; // 'н' at the end of the word
+          }
         } else {
           match = translitMap[key];
         }
