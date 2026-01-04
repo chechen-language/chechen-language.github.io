@@ -3,7 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
+
+  <!-- Primary Meta Tags -->
+  <title>{{ title }} | Chechen Language Projects</title>
+  <meta name="title" content="{{ title }} | Chechen Language Projects">
+  <meta name="description" content="{% if description %}{{ description }}{% else %}Open source tools and resources for the Chechen language including Latin keyboard layouts, transliteration tools, and language preservation projects.{% endif %}">
+  <meta name="keywords" content="Chechen language, Chechen keyboard, Latin script, transliteration, Noxchi, keyboard layout, language tools, Caucasian languages">
+  <meta name="author" content="Chechen Language Projects">
+  <meta name="language" content="English">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://chechen-language.github.io{{ page.url }}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chechen-language.github.io{{ page.url }}">
+  <meta property="og:title" content="{{ title }} | Chechen Language Projects">
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Open source tools and resources for the Chechen language including Latin keyboard layouts, transliteration tools, and language preservation projects.{% endif %}">
+  <meta property="og:image" content="https://chechen-language.github.io/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Chechen Language Projects">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://chechen-language.github.io{{ page.url }}">
+  <meta name="twitter:title" content="{{ title }} | Chechen Language Projects">
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Open source tools and resources for the Chechen language including Latin keyboard layouts, transliteration tools, and language preservation projects.{% endif %}">
+  <meta name="twitter:image" content="https://chechen-language.github.io/assets/images/og-image.png">
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#8B2332">
+  <meta name="msapplication-TileColor" content="#8B2332">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Chechen Language Projects",
+    "url": "https://chechen-language.github.io",
+    "logo": "https://chechen-language.github.io/assets/images/logo.png",
+    "description": "Open source tools and resources for the Chechen language preservation and development",
+    "sameAs": [
+      "https://github.com/chechen-language"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Community Support",
+      "url": "https://github.com/chechen-language"
+    }
+  }
+  </script>
+
   <link rel="stylesheet" href="/assets/style.css">
   {% block extra_head %}
   {% endblock %}

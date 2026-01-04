@@ -1,6 +1,7 @@
 ---
 layout: layout.njk
 title: Chechen Transliterator
+description: Convert Chechen text between Cyrillic and Latin scripts with intelligent transliteration. Includes special handling for word-ending 'н' and automatic blacklist detection.
 ---
 
 <h1 class="page-title">Chechen Transliterator</h1>

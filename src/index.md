@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: layout.njk
+description: Discover open source Chechen language tools including Latin keyboard layouts for all platforms and advanced transliteration tools for Cyrillic to Latin script conversion.
 ---
 
 <h1 class="page-title">Welcome to the Chechen Language Projects</h1>
