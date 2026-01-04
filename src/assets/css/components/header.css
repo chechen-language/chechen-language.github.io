@@ -1,0 +1,44 @@
+/* Header component with istang design */
+
+.site-header {
+  background: linear-gradient(180deg,
+    var(--color-burgundy-dark) 0%,
+    var(--color-burgundy) 100%);
+  border-bottom: var(--border-medium) solid var(--color-gold);
+  position: relative;
+  padding: var(--space-lg) 0;
+  min-height: var(--header-height);
+  overflow: visible;
+}
+
+.site-header .container {
+  position: relative;
+  margin-top: 44px;
+}
+
+.site-header h1 {
+  color: var(--color-gold);
+  font-size: var(--text-3xl);
+  margin: 0 0 var(--space-md) 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive header sizing */
+@media (min-width: 768px) {
+  .site-header h1 {
+    font-size: var(--text-4xl);
+  }
+}
+
+@media (max-width: 575px) {
+  .site-header {
+    padding: var(--space-md) 0;
+    min-height: 80px;
+  }
+
+  .site-header h1 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-sm);
+  }
+}

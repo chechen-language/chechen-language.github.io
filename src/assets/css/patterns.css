@@ -1,0 +1,159 @@
+/* SVG Pattern utilities for istang design elements */
+
+/* Istang border decorations */
+.istang-border {
+  position: relative;
+}
+
+.istang-border-top {
+  height: 96px;
+  background-color: #475d30;
+  border-top: var(--border-medium) solid var(--color-gold);
+  border-bottom: var(--border-medium) solid var(--color-gold);
+}
+
+.istang-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 88px;
+  background-image: url('/assets/images/patterns/spiral-border.svg');
+  background-repeat: repeat-x;
+  background-size: 376px 88px;
+  background-position: center top;
+  pointer-events: none;
+}
+
+.istang-border-bottom {
+  height: 96px;
+  background-color: #475e30;
+  border-top: var(--border-medium) solid var(--color-gold);
+  border-bottom: var(--border-medium) solid var(--color-gold);
+}
+
+.istang-border-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 88px;
+  background-image: url('/assets/images/patterns/spiral-border.svg');
+  background-repeat: repeat-x;
+  background-size: 376px 88px;
+  background-position: center bottom;
+  pointer-events: none;
+}
+
+/* Corner ornaments */
+.istang-corner {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: var(--z-base);
+}
+
+.istang-corner-tl {
+  top: 32px;
+  left: 32px;
+  background-image: url('/assets/images/block.png');
+}
+
+.istang-corner-tr {
+  top: 32px;
+  right: 32px;
+  background-image: url('/assets/images/block.png');
+  transform: scaleX(-1);
+}
+
+.istang-corner-bl {
+  bottom: 32px;
+  left: 32px;
+  background-image: url('/assets/images/block.png');
+  transform: scaleY(-1);
+}
+
+.istang-corner-br {
+  bottom: 32px;
+  right: 32px;
+  background-image: url('/assets/images/block.png');
+  transform: scale(-1, -1);
+}
+
+/* Divider pattern */
+.istang-divider {
+  position: relative;
+  text-align: center;
+  margin: var(--space-xl) 0;
+}
+
+.istang-divider::after {
+  content: '';
+  display: block;
+  width: 400px;
+  max-width: 100%;
+  height: 30px;
+  margin: var(--space-md) auto 0;
+  background-image: url('/assets/images/patterns/divider-pattern.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Page title with divider */
+.page-title {
+  color: var(--color-burgundy);
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  padding-bottom: var(--space-lg);
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  max-width: 90%;
+  height: 30px;
+  background-image: url('/assets/images/patterns/divider-pattern.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Responsive adjustments for patterns */
+@media (max-width: 575px) {
+  /* Hide spiral borders on mobile for simplicity */
+  .istang-border-top::before,
+  .istang-border-bottom::after {
+    display: none;
+  }
+
+  /* Smaller corner ornaments on mobile */
+  .istang-corner {
+    width: 40px;
+    height: 40px;
+  }
+
+  .page-title::after {
+    width: 150px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  /* Medium corner ornaments on tablets */
+  .istang-corner {
+    width: 60px;
+    height: 60px;
+  }
+}

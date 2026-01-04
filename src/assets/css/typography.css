@@ -1,0 +1,104 @@
+/* Typography system */
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-burgundy);
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+}
+
+h4 {
+  font-size: var(--text-xl);
+}
+
+h5, h6 {
+  font-size: var(--text-lg);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--color-forest);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover, a:focus {
+  color: var(--color-forest-light);
+  text-decoration: underline;
+}
+
+strong, b {
+  font-weight: var(--font-bold);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--text-sm);
+}
+
+code, pre {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: var(--text-sm);
+  background-color: var(--color-bg-light);
+  padding: 0.125rem 0.25rem;
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  padding: var(--space-md);
+  overflow-x: auto;
+  border: 1px solid var(--color-gold);
+}
+
+blockquote {
+  border-left: var(--border-medium) solid var(--color-gold);
+  padding-left: var(--space-lg);
+  margin: var(--space-lg) 0;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+ul, ol {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-xl);
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li {
+  margin-bottom: var(--space-sm);
+}
