@@ -133,10 +133,23 @@
 
 /* Responsive adjustments for patterns */
 @media (max-width: 575px) {
-  /* Hide spiral borders on mobile for simplicity */
-  .istang-border-top::before,
+  /* Smaller spiral borders on mobile */
+  .istang-border-top {
+    height: 48px;
+  }
+
+  .istang-border-top::before {
+    height: 44px;
+    background-size: 188px 44px;
+  }
+
+  .istang-border-bottom {
+    height: 48px;
+  }
+
   .istang-border-bottom::after {
-    display: none;
+    height: 44px;
+    background-size: 188px 44px;
   }
 
   /* Smaller corner ornaments on mobile */
@@ -151,6 +164,25 @@
 }
 
 @media (min-width: 576px) and (max-width: 991px) {
+  /* Medium-sized spiral borders on tablets */
+  .istang-border-top {
+    height: 72px;
+  }
+
+  .istang-border-top::before {
+    height: 66px;
+    background-size: 282px 66px;
+  }
+
+  .istang-border-bottom {
+    height: 72px;
+  }
+
+  .istang-border-bottom::after {
+    height: 66px;
+    background-size: 282px 66px;
+  }
+
   /* Medium corner ornaments on tablets */
   .istang-corner {
     width: 60px;
