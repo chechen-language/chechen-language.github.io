@@ -102,3 +102,30 @@ ol {
 li {
   margin-bottom: var(--space-sm);
 }
+
+/* Responsive typography - smaller headings on mobile */
+@media (max-width: 575px) {
+  h1 {
+    font-size: var(--text-2xl);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+  }
+
+  h4 {
+    font-size: var(--text-base);
+  }
+
+  h5, h6 {
+    font-size: var(--text-base);
+  }
+
+  .page-title {
+    font-size: var(--text-2xl);
+  }
+}

@@ -61,27 +61,27 @@
 .istang-corner-tl {
   top: 32px;
   left: 32px;
-  background-image: url('/assets/images/block.png');
+  background-image: url('/assets/images/block-min.png');
 }
 
 .istang-corner-tr {
   top: 32px;
   right: 32px;
-  background-image: url('/assets/images/block.png');
+  background-image: url('/assets/images/block-min.png');
   transform: scaleX(-1);
 }
 
 .istang-corner-bl {
   bottom: 32px;
   left: 32px;
-  background-image: url('/assets/images/block.png');
+  background-image: url('/assets/images/block-min.png');
   transform: scaleY(-1);
 }
 
 .istang-corner-br {
   bottom: 32px;
   right: 32px;
-  background-image: url('/assets/images/block.png');
+  background-image: url('/assets/images/block-min.png');
   transform: scale(-1, -1);
 }
 
@@ -158,6 +158,32 @@
     height: 40px;
   }
 
+  .istang-corner-tl {
+    top: 16px;
+    left: 16px;
+  }
+
+  .istang-corner-tr {
+    top: 16px;
+    right: 16px;
+  }
+
+  .istang-corner-bl {
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .istang-corner-br {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  /* Smaller page title on mobile */
+  .page-title {
+    font-size: var(--text-2xl);
+    padding-bottom: var(--space-md);
+  }
+
   .page-title::after {
     width: 150px;
   }
@@ -185,7 +211,27 @@
 
   /* Medium corner ornaments on tablets */
   .istang-corner {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .istang-corner-tl {
+    top: 18px;
+    left: 18px;
+  }
+
+  .istang-corner-tr {
+    top: 18px;
+    right: 18px;
+  }
+
+  .istang-corner-bl {
+    bottom: 18px;
+    left: 18px;
+  }
+
+  .istang-corner-br {
+    bottom: 18px;
+    right: 18px;
   }
 }
