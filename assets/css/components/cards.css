@@ -1,0 +1,91 @@
+/* Card component for repository listings */
+
+.card {
+  background-color: var(--color-bg-light);
+  border: var(--border-medium) solid var(--color-burgundy);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  position: relative;
+  transition: all var(--transition-base);
+  margin-bottom: var(--space-lg);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 30px;
+  background-image: url('/assets/images/patterns/divider-pattern.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card:hover {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  color: var(--color-burgundy);
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-sm);
+  font-weight: var(--font-bold);
+}
+
+.card-description {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: var(--leading-normal);
+}
+
+.card-link {
+  color: var(--color-forest);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast);
+  display: inline-block;
+}
+
+.card-link:hover,
+.card-link:focus {
+  border-bottom-color: var(--color-forest);
+  text-decoration: none;
+}
+
+/* Content section wrapper */
+.content-section {
+  background-color: var(--color-bg-light);
+  border: var(--border-medium) solid var(--color-burgundy);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+}
+
+.content-section h1:first-child,
+.content-section h2:first-child,
+.content-section h3:first-child {
+  margin-top: 0;
+}
+
+/* Responsive cards */
+@media (max-width: 575px) {
+  .card {
+    padding: var(--space-lg);
+  }
+
+  .card::before {
+    width: 40px;
+    height: 20px;
+  }
+
+  .content-section {
+    padding: var(--space-lg);
+  }
+}

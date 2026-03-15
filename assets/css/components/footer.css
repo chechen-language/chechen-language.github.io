@@ -1,0 +1,50 @@
+/* Footer component with istang design */
+
+.site-footer {
+  background: linear-gradient(180deg,
+    var(--color-burgundy-dark) 0%,
+    var(--color-burgundy) 100%);
+  border-top: var(--border-medium) solid var(--color-gold);
+  color: var(--color-gold-light);
+  padding: var(--space-xl) 0;
+  min-height: var(--footer-height);
+  position: relative;
+  text-align: center;
+  margin-top: auto;
+}
+
+.site-footer .container {
+  position: relative;
+  z-index: var(--z-base);
+  margin-bottom: 44px;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: var(--text-base);
+  color: var(--color-gold-light);
+}
+
+.site-footer a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+}
+
+/* Responsive footer */
+@media (max-width: 575px) {
+  .site-footer {
+    padding: var(--space-lg) 0;
+    min-height: 60px;
+  }
+
+  .site-footer p {
+    font-size: var(--text-sm);
+  }
+}

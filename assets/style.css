@@ -1,15 +1,23 @@
-body {
-  background-color: #f4f4f4;
-}
+/* Chechen Language Projects - Istang Design System */
 
-header {
-  margin-bottom: 20px;
-}
+/* CSS Custom Properties - Foundation */
+@import url('css/variables.css');
 
-.container {
-  margin-top: 20px;
-}
+/* Base Layer */
+@import url('css/reset.css');
+@import url('css/typography.css');
+@import url('css/layout.css');
 
-footer {
-  margin-top: auto;
-}
+/* Pattern System */
+@import url('css/patterns.css');
+
+/* Components */
+@import url('css/components/header.css');
+@import url('css/components/footer.css');
+@import url('css/components/navigation.css');
+@import url('css/components/cards.css');
+@import url('css/components/buttons.css');
+@import url('css/components/forms.css');
+
+/* Utilities - Last */
+@import url('css/utilities.css');
