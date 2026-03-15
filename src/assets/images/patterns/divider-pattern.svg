@@ -1,0 +1,59 @@
+<svg width="400" height="30" viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg">
+  <!-- Horizontal divider pattern - symmetrical from center -->
+  <defs>
+    <style>
+      .divider-burgundy { fill: #8B2332; }
+      .divider-gold { fill: #D4A574; }
+      .divider-forest { fill: #2C5F2D; }
+    </style>
+  </defs>
+
+  <!-- Center diamond -->
+  <polygon class="divider-gold" points="200,5 210,15 200,25 190,15" />
+  <polygon class="divider-burgundy" points="200,8 207,15 200,22 193,15" />
+  <circle class="divider-forest" cx="200" cy="15" r="3" />
+
+  <!-- Left side ornaments -->
+  <!-- Floral element 1 (left) -->
+  <path class="divider-gold" d="M 160,15 C 155,10 150,10 145,15 C 150,20 155,20 160,15" />
+  <path class="divider-forest" d="M 160,15 C 155,12 150,12 145,15 C 150,18 155,18 160,15" />
+
+  <!-- Spiral element 2 (left) -->
+  <path class="divider-burgundy" d="M 120,15 C 120,10 115,8 110,10 C 108,12 108,17 112,18 C 114,18 115,16 115,15" />
+  <circle class="divider-gold" cx="110" cy="15" r="2" />
+
+  <!-- Floral element 3 (left) -->
+  <path class="divider-gold" d="M 80,15 C 75,10 70,10 65,15 C 70,20 75,20 80,15" />
+  <path class="divider-forest" d="M 80,15 C 75,12 70,12 65,15 C 70,18 75,18 80,15" />
+
+  <!-- Spiral element 4 (left) -->
+  <path class="divider-burgundy" d="M 40,15 C 40,10 35,8 30,10 C 28,12 28,17 32,18 C 34,18 35,16 35,15" />
+  <circle class="divider-gold" cx="30" cy="15" r="2" />
+
+  <!-- Right side ornaments (mirrored) -->
+  <!-- Floral element 1 (right) -->
+  <path class="divider-gold" d="M 240,15 C 245,10 250,10 255,15 C 250,20 245,20 240,15" />
+  <path class="divider-forest" d="M 240,15 C 245,12 250,12 255,15 C 250,18 245,18 240,15" />
+
+  <!-- Spiral element 2 (right) -->
+  <path class="divider-burgundy" d="M 280,15 C 280,10 285,8 290,10 C 292,12 292,17 288,18 C 286,18 285,16 285,15" />
+  <circle class="divider-gold" cx="290" cy="15" r="2" />
+
+  <!-- Floral element 3 (right) -->
+  <path class="divider-gold" d="M 320,15 C 325,10 330,10 335,15 C 330,20 325,20 320,15" />
+  <path class="divider-forest" d="M 320,15 C 325,12 330,12 335,15 C 330,18 325,18 320,15" />
+
+  <!-- Spiral element 4 (right) -->
+  <path class="divider-burgundy" d="M 360,15 C 360,10 365,8 370,10 C 372,12 372,17 368,18 C 366,18 365,16 365,15" />
+  <circle class="divider-gold" cx="370" cy="15" r="2" />
+
+  <!-- Connecting lines with gold -->
+  <line class="divider-gold" x1="40" y1="15" x2="65" y2="15" stroke="#D4A574" stroke-width="1.5" />
+  <line class="divider-gold" x1="80" y1="15" x2="110" y2="15" stroke="#D4A574" stroke-width="1.5" />
+  <line class="divider-gold" x1="120" y1="15" x2="145" y2="15" stroke="#D4A574" stroke-width="1.5" />
+  <line class="divider-gold" x1="160" y1="15" x2="190" y2="15" stroke="#D4A574" stroke-width="1.5" />
+  <line class="divider-gold" x1="210" y1="15" x2="240" y2="15" stroke="#D4A574" stroke-width="1.5" />
+  <line class="divider-gold" x1="255" y1="15" x2="280" y2="15" stroke="#D4A574" stroke-width="1.5" />
+  <line class="divider-gold" x1="290" y1="15" x2="320" y2="15" stroke="#D4A574" stroke-width="1.5" />
+  <line class="divider-gold" x1="335" y1="15" x2="360" y2="15" stroke="#D4A574" stroke-width="1.5" />
+</svg>

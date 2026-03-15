@@ -3,6 +3,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/assets');
   eleventyConfig.addPassthroughCopy({ 'node_modules/@ce/transliteration/translit.js': 'assets/repositories/chechen-transliterator/translit.js'});
 
+  // Copy SEO files
+  eleventyConfig.addPassthroughCopy('src/robots.txt');
+  eleventyConfig.addPassthroughCopy('src/sitemap.xml');
+
   return {
     dir: {
       input: 'src',

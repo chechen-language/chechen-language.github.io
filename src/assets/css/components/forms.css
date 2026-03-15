@@ -1,0 +1,148 @@
+/* Form component styles */
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+  width: 100%;
+  padding: var(--space-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  border: var(--border-thin) solid var(--color-burgundy);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Istang-styled textarea for special pages */
+.istang-textarea {
+  border: var(--border-medium) solid var(--color-burgundy);
+  background-color: var(--color-bg-light);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+}
+
+.istang-textarea:focus {
+  border-color: var(--color-gold);
+  background-color: var(--color-white);
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+.form-help {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Form validation states */
+.form-error {
+  border-color: #DC3545;
+}
+
+.form-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2);
+}
+
+.form-success {
+  border-color: #28A745;
+}
+
+.form-success:focus {
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+}
+
+.error-message {
+  color: #DC3545;
+  font-size: var(--text-sm);
+  margin-top: var(--space-xs);
+}
+
+.success-message {
+  color: #28A745;
+  font-size: var(--text-sm);
+  margin-top: var(--space-xs);
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+/* Form control spacing */
+.form-control {
+  margin-bottom: var(--space-md);
+}
+
+/* Select styling */
+select {
+  width: 100%;
+  padding: var(--space-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  border: var(--border-thin) solid var(--color-burgundy);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-base);
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
+}
+
+/* Checkbox and radio styling */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: var(--space-sm);
+  cursor: pointer;
+}
+
+/* Responsive forms */
+@media (max-width: 575px) {
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  select {
+    font-size: var(--text-base);
+  }
+
+  .istang-textarea {
+    padding: var(--space-md);
+  }
+}
